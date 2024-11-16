@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Button, Text, Alert} from 'react-native';
+import {View, Button, Text, Alert, StyleSheet} from 'react-native';
 import ToDoForm from '../components/ToDoForm';
 import ToDoList from '../components/ToDoList';
 import MainLayout from '../layouts/MainLayout';
@@ -20,13 +20,22 @@ function Home({navigation}: {navigation: any}): React.JSX.Element {
       <View>
         <ToDoList tasks={tasks} />
         <ToDoForm addTask={addTask} />
-        <Button
-          title="Go to About"
-          onPress={() => navigation.navigate('About')}
-        />
+        <View style={style.button}>
+          <Button
+            title="Go to About"
+            onPress={() => navigation.navigate('About')}
+          />
+        </View>
       </View>
     </MainLayout>
   );
 }
+
+const style = StyleSheet.create({
+  button: {
+    borderRadius: 10,
+    padding: 10,
+  },
+});
 
 export default Home;

@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import Header from '../components/Header';
 
 const MainLayout = ({children}: {children: any}) => {
   return (
     <View style={styles.container}>
+      <Header />
       {children}
-      {/* <Footer /> */}
     </View>
   );
 };
